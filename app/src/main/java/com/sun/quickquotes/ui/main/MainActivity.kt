@@ -1,7 +1,8 @@
-package com.sun.quickquotes
+package com.sun.quickquotes.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.sun.quickquotes.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
