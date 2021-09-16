@@ -4,6 +4,7 @@ import android.app.Application
 import com.sun.quickquotes.di.apiModule
 import com.sun.quickquotes.di.networkModule
 import com.sun.quickquotes.di.roomModule
+import com.sun.quickquotes.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -17,6 +18,7 @@ class MainApplication : Application() {
                     apiModule,
                     networkModule,
                     roomModule,
+                    viewModelModule,
                 )
             )
         }

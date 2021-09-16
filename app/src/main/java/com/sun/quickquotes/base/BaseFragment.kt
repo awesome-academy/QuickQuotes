@@ -63,9 +63,9 @@ abstract class BaseFragment<V : ViewDataBinding> : Fragment() {
         }
     }
 
-    abstract fun showLoading()
+    open fun showLoading() {}
 
-    abstract fun hideLoading()
+    open fun hideLoading() {}
 
     override fun onDestroy() {
         super.onDestroy()
