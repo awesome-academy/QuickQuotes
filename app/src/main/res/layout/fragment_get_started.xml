@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="getStartedVM"
+            type="com.sun.quickquotes.ui.getstarted.GetStartedViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        tools:context=".ui.getstarted.GetStartedFragment">
+
+        <ImageView
+            android:id="@+id/image_landscape"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_getstarted"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view_tool_bar"
+            android:layout_width="0dp"
+            android:layout_height="?actionBarSize"
+            android:background="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/button_back"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/dp_6"
+            android:background="?android:selectableItemBackground"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintBottom_toBottomOf="@id/view_tool_bar"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="@id/view_tool_bar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.07" />
+
+        <TextView
+            android:id="@+id/text_title"
+            style="@style/TextViewDefault"
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/dp_10"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp_20"
+            app:layout_constraintBottom_toBottomOf="@id/view_tool_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/button_back"
+            app:layout_constraintTop_toTopOf="@id/view_tool_bar"
+            tools:text="@tools:sample/last_names" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_tool_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="view_tool_bar, button_back, text_title" />
+
+        <TextView
+            android:id="@+id/text_started_set_reminder"
+            style="@style/TextViewDefault"
+            android:layout_marginVertical="@dimen/dp_30"
+            android:gravity="center"
+            android:text="@string/text_set_daily_quickquotes_reminders"
+            android:textSize="@dimen/sp_20"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/view_start_at"
+            app:layout_constraintEnd_toEndOf="@id/image_landscape"
+            app:layout_constraintStart_toStartOf="@id/image_landscape"
+            app:layout_constraintTop_toBottomOf="@id/image_landscape" />
+
+        <View
+            android:id="@+id/view_start_at"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_radius8_hint_of_red"
+            app:layout_constraintBottom_toTopOf="@id/view_end_at"
+            app:layout_constraintDimensionRatio="7:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_started_set_reminder"
+            app:layout_constraintWidth_percent="0.9" />
+
+        <TextView
+            android:id="@+id/text_start_at"
+            style="@style/TextViewDefault"
+            android:layout_marginStart="@dimen/dp_10"
+            android:text="@string/text_start_at"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/view_start_at"
+            app:layout_constraintEnd_toEndOf="@id/view_start_at"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@id/view_start_at"
+            app:layout_constraintTop_toTopOf="@id/view_start_at"
+            app:layout_constraintWidth_percent="0.5" />
+
+        <ImageView
+            android:id="@+id/image_decrease_start_time"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="?android:selectableItemBackground"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_minus"
+            app:layout_constraintBottom_toBottomOf="@id/text_start_at"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/text_start_time"
+            app:layout_constraintStart_toEndOf="@id/text_start_at"
+            app:layout_constraintTop_toTopOf="@id/text_start_at"
+            app:layout_constraintWidth_percent="0.1" />
+
+        <TextView
+            android:id="@+id/text_start_time"
+            style="@style/TextViewDefault"
+            android:layout_marginHorizontal="@dimen/dp_2"
+            android:gravity="center"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintBottom_toBottomOf="@id/text_start_at"
+            app:layout_constraintEnd_toStartOf="@id/image_increase_start_time"
+            app:layout_constraintStart_toEndOf="@id/image_decrease_start_time"
+            app:layout_constraintTop_toTopOf="@id/text_start_at" />
+
+        <ImageView
+            android:id="@+id/image_increase_start_time"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:background="?android:selectableItemBackground"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_plus"
+            app:layout_constraintBottom_toBottomOf="@id/text_start_at"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/view_start_at"
+            app:layout_constraintStart_toEndOf="@id/text_start_time"
+            app:layout_constraintTop_toTopOf="@id/text_start_at"
+            app:layout_constraintWidth_percent="0.1" />
+
+        <View
+            android:id="@+id/view_end_at"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/bg_radius8_hint_of_red"
+            app:layout_constraintBottom_toTopOf="@id/view_how_many"
+            app:layout_constraintDimensionRatio="7:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_start_at"
+            app:layout_constraintWidth_percent="0.9" />
+
+        <TextView
+            android:id="@+id/text_end_at"
+            style="@style/TextViewDefault"
+            android:layout_marginStart="@dimen/dp_10"
+            android:text="@string/text_end_at"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/view_end_at"
+            app:layout_constraintEnd_toEndOf="@id/view_end_at"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@id/view_end_at"
+            app:layout_constraintTop_toTopOf="@id/view_end_at"
+            app:layout_constraintWidth_percent="0.5" />
+
+        <ImageView
+            android:id="@+id/image_decrease_end_time"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="?android:selectableItemBackground"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_minus"
+            app:layout_constraintBottom_toBottomOf="@id/text_end_at"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/text_end_time"
+            app:layout_constraintStart_toEndOf="@id/text_end_at"
+            app:layout_constraintTop_toTopOf="@id/text_end_at"
+            app:layout_constraintWidth_percent="0.1" />
+
+        <TextView
+            android:id="@+id/text_end_time"
+            style="@style/TextViewDefault"
+            android:layout_marginHorizontal="@dimen/dp_2"
+            android:gravity="center"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintBottom_toBottomOf="@id/text_end_at"
+            app:layout_constraintEnd_toStartOf="@id/image_increase_end_time"
+            app:layout_constraintStart_toEndOf="@id/image_decrease_end_time"
+            app:layout_constraintTop_toTopOf="@id/text_end_at" />
+
+        <ImageView
+            android:id="@+id/image_increase_end_time"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:background="?android:selectableItemBackground"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_plus"
+            app:layout_constraintBottom_toBottomOf="@id/text_end_at"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/view_end_at"
+            app:layout_constraintStart_toEndOf="@id/text_end_time"
+            app:layout_constraintTop_toTopOf="@id/text_end_at"
+            app:layout_constraintWidth_percent="0.1" />
+
+        <View
+            android:id="@+id/view_how_many"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/bg_radius8_hint_of_red"
+            app:layout_constraintBottom_toTopOf="@id/button_get_started_continue"
+            app:layout_constraintDimensionRatio="7:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_end_at"
+            app:layout_constraintWidth_percent="0.9" />
+
+        <TextView
+            android:id="@+id/text_how_many"
+            style="@style/TextViewDefault"
+            android:layout_marginStart="@dimen/dp_10"
+            android:text="@string/text_how_many"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/view_how_many"
+            app:layout_constraintEnd_toEndOf="@id/view_how_many"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@id/view_how_many"
+            app:layout_constraintTop_toTopOf="@id/view_how_many"
+            app:layout_constraintWidth_percent="0.5" />
+
+        <ImageView
+            android:id="@+id/image_decrease_times_number"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="?android:selectableItemBackground"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_minus"
+            app:layout_constraintBottom_toBottomOf="@id/text_how_many"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/text_times_number"
+            app:layout_constraintStart_toEndOf="@id/text_how_many"
+            app:layout_constraintTop_toTopOf="@id/text_how_many"
+            app:layout_constraintWidth_percent="0.1" />
+
+        <TextView
+            android:id="@+id/text_times_number"
+            style="@style/TextViewDefault"
+            android:layout_marginHorizontal="@dimen/dp_2"
+            android:gravity="center"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintBottom_toBottomOf="@id/text_how_many"
+            app:layout_constraintEnd_toStartOf="@id/image_increase_times_number"
+            app:layout_constraintStart_toEndOf="@id/image_decrease_times_number"
+            app:layout_constraintTop_toTopOf="@id/text_how_many" />
+
+        <ImageView
+            android:id="@+id/image_increase_times_number"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:background="?android:selectableItemBackground"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_plus"
+            app:layout_constraintBottom_toBottomOf="@id/text_how_many"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/view_end_at"
+            app:layout_constraintStart_toEndOf="@id/text_times_number"
+            app:layout_constraintTop_toTopOf="@id/text_how_many"
+            app:layout_constraintWidth_percent="0.1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_get_started_continue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:backgroundTint="@color/color_vin_rouge"
+            android:text="@string/text_continue"
+            android:textAllCaps="true"
+            app:cornerRadius="@dimen/dp_20"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_how_many"
+            app:layout_constraintWidth_percent="0.6" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

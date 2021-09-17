@@ -1,12 +1,24 @@
 package com.sun.quickquotes.ui.main
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+import androidx.navigation.fragment.NavHostFragment
 import com.sun.quickquotes.R
+import com.sun.quickquotes.base.BaseActivity
+import com.sun.quickquotes.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+class MainActivity : BaseActivity<ActivityMainBinding>() {
+
+    override val layoutId get() = R.layout.activity_main
+    private val navHostFragment by lazy {
+        supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment
     }
+    private val navController by lazy { navHostFragment.navController }
+
+    override fun initViews() {
+
+    }
+
+    private fun firstTimeOpen() {
+
+    }
+
 }

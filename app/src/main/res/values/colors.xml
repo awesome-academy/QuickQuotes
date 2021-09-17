@@ -5,4 +5,7 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+    <color name="color_hint_of_red">#F8F5F5</color>
+    <color name="color_vin_rouge">#954366</color>
+    <color name="color_storm_gray">#747888</color>
 </resources>

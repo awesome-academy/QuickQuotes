@@ -1,5 +1,14 @@
 <resources>
     <string name="app_name">QuickQuotes</string>
     <string name="error_binding">Binding is not valid</string>
+    <string name="error_max_times_per_day">"Max 10 reminders per day only!"</string>
     <string name="error_something_wrong">Something wrong \ud83d\ude05</string>
+    <string name="error_time_not_valid">Time is not valid!</string>
+    <string name="error_turned_off_reminder">"Turned off reminder!"</string>
+    <string name="text_continue">continue</string>
+    <string name="text_end_at">End at</string>
+    <string name="text_how_many">How many</string>
+    <string name="text_set_daily_quickquotes_reminders">Set daily QuickQuotes reminders</string>
+    <string name="text_set_reminder_successfully">Set reminder successfully! \ud83d\ude04</string>
+    <string name="text_start_at">Start at</string>
 </resources>
