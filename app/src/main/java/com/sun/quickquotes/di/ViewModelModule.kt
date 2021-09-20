@@ -4,5 +4,5 @@ import com.sun.quickquotes.ui.getstarted.GetStartedViewModel
 import org.koin.dsl.module
 
 val viewModelModule = module {
-    single { GetStartedViewModel() }
+    single { GetStartedViewModel(get()) }
 }
