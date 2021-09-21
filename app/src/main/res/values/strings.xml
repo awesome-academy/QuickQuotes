@@ -5,10 +5,18 @@
     <string name="error_something_wrong">Something wrong \ud83d\ude05</string>
     <string name="error_time_not_valid">Time is not valid!</string>
     <string name="error_turned_off_reminder">"Turned off reminder!"</string>
+    <string name="text_categories">Categories</string>
+    <string name="text_category">Category</string>
     <string name="text_continue">continue</string>
     <string name="text_end_at">End at</string>
+    <string name="text_home">Home</string>
     <string name="text_how_many">How many</string>
+    <string name="text_personal">Personal</string>
+    <string name="text_search">Search</string>
     <string name="text_set_daily_quickquotes_reminders">Set daily QuickQuotes reminders</string>
     <string name="text_set_reminder_successfully">Set reminder successfully! \ud83d\ude04</string>
+    <string name="text_setting">Setting</string>
     <string name="text_start_at">Start at</string>
+    <string name="text_tags">Tags</string>
+    <string name="text_theme">Theme</string>
 </resources>

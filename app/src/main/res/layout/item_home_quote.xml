@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="quote"
+            type="com.sun.quickquotes.data.model.Quote" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_vin_rouge">
+
+        <View
+            android:id="@+id/view_tool_bar"
+            android:layout_width="0dp"
+            android:layout_height="?actionBarSize"
+            android:background="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_home_quote_message"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/dp_6"
+            android:layout_marginTop="@dimen/dp_20"
+            android:autoSizeMaxTextSize="@dimen/sp_30"
+            android:autoSizeMinTextSize="@dimen/sp_20"
+            android:autoSizeStepGranularity="@dimen/sp_2"
+            android:autoSizeTextType="uniform"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:text="@{quote.text}"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/text_home_quote_author"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_tool_bar"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:targetApi="o"
+            tools:text="@tools:sample/lorem/random" />
+
+        <TextView
+            android:id="@+id/text_home_quote_author"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_30"
+            android:gravity="center"
+            android:text="@{quote.author}"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp_22"
+            app:layout_constraintBottom_toTopOf="@id/image_home_share"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_home_quote_message"
+            tools:text="@tools:sample/full_names" />
+
+        <ImageView
+            android:id="@+id/image_home_share"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/dp_2"
+            android:background="?android:selectableItemBackground"
+            android:backgroundTint="@android:color/white"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_share"
+            app:layout_constraintBottom_toBottomOf="@id/guideline_home"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/image_home_favorite"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.1" />
+
+        <ImageView
+            android:id="@+id/image_home_favorite"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/dp_2"
+            android:background="?android:selectableItemBackground"
+            android:backgroundTint="@android:color/white"
+            android:contentDescription="@null"
+            app:layout_constraintBottom_toBottomOf="@id/image_home_share"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/image_home_share"
+            app:layout_constraintWidth_percent="0.1"
+            app:loadImageFavorite="@{quote.isFavorite}" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
