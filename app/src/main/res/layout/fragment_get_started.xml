@@ -6,7 +6,7 @@
     <data>
 
         <variable
-            name="getStartedVM"
+            name="viewModel"
             type="com.sun.quickquotes.ui.getstarted.GetStartedViewModel" />
     </data>
 
@@ -70,6 +70,7 @@
             android:id="@+id/group_tool_bar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="@{viewModel.isEnableBackButton()}"
             app:constraint_referenced_ids="view_tool_bar, button_back, text_title" />
 
         <TextView
@@ -130,6 +131,7 @@
             style="@style/TextViewDefault"
             android:layout_marginHorizontal="@dimen/dp_2"
             android:gravity="center"
+            android:text="@{viewModel.startTime}"
             android:textSize="@dimen/sp_16"
             app:layout_constraintBottom_toBottomOf="@id/text_start_at"
             app:layout_constraintEnd_toStartOf="@id/image_increase_start_time"
@@ -197,6 +199,7 @@
             style="@style/TextViewDefault"
             android:layout_marginHorizontal="@dimen/dp_2"
             android:gravity="center"
+            android:text="@{viewModel.endTime}"
             android:textSize="@dimen/sp_16"
             app:layout_constraintBottom_toBottomOf="@id/text_end_at"
             app:layout_constraintEnd_toStartOf="@id/image_increase_end_time"
@@ -264,6 +267,7 @@
             style="@style/TextViewDefault"
             android:layout_marginHorizontal="@dimen/dp_2"
             android:gravity="center"
+            android:text="@{viewModel.timesNumber}"
             android:textSize="@dimen/sp_16"
             app:layout_constraintBottom_toBottomOf="@id/text_how_many"
             app:layout_constraintEnd_toStartOf="@id/image_increase_times_number"
