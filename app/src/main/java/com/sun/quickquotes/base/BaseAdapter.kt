@@ -4,7 +4,6 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 
 abstract class BaseAdapter<D, VH : BaseViewHolder<D>>(
-    private val items: MutableList<D>,
     diffUtil: DiffUtil.ItemCallback<D>
 ) : ListAdapter<D, VH>(diffUtil), UpdateData<D> {
 

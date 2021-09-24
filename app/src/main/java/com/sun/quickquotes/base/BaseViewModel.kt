@@ -30,6 +30,6 @@ abstract class BaseViewModel : ViewModel() {
     }
 
     fun hideLoading() {
-        _isLoading.value = Event(false)
+        _isLoading.postValue(Event(false))
     }
 }

@@ -1,6 +1,7 @@
 package com.sun.quickquotes.data.repository
 
 import com.sun.quickquotes.data.model.Quote
+import com.sun.quickquotes.data.model.QuoteResponse
 import com.sun.quickquotes.data.source.QuoteDataSource
 
 class QuoteRepositoryImpl(
@@ -34,6 +35,12 @@ class QuoteRepositoryImpl(
 
     override suspend fun getRandomQuotes(count: String) =
         remote.getRandomQuotes(count)
+
+    override suspend fun getRandomQuotes(
+        count: String,
+        type: String,
+        value: String
+    ) = remote.getRandomQuotes(count, type, value)
 
     override suspend fun getAllQuotes() =
         remote.getAllQuotes()

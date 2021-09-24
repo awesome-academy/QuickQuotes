@@ -3,6 +3,7 @@ package com.sun.quickquotes.ui.main
 import android.content.SharedPreferences
 import android.view.View
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.sun.quickquotes.R
 import com.sun.quickquotes.base.BaseActivity
 import com.sun.quickquotes.databinding.ActivityMainBinding
@@ -31,7 +32,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     fun setUpBottomNavigation() {
-
+        viewBinding.bottomNavigation.apply {
+            visibility = View.VISIBLE
+            setupWithNavController(navController)
+        }
     }
 
 }

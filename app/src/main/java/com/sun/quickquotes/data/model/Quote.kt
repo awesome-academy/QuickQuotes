@@ -12,7 +12,7 @@ import kotlinx.parcelize.Parcelize
 @Entity(tableName = Quote.TABLE_NAME)
 data class Quote(
     @PrimaryKey(autoGenerate = true)
-    val id: Long = 0,
+    var id: Long = 0,
     @ColumnInfo
     @SerializedName("text")
     val text: String = "",
@@ -23,9 +23,9 @@ data class Quote(
     @SerializedName("tag")
     val tag: String = "",
     @ColumnInfo(defaultValue = "0")
-    val isFavorite: Boolean = false,
+    var isFavorite: Boolean = false,
     @ColumnInfo(defaultValue = "-1")
-    val collectionId: Long = -1,
+    var collectionId: Long = -1,
 ) : Parcelable {
 
     companion object {

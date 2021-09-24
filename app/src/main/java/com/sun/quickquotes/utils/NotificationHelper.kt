@@ -5,8 +5,11 @@ import android.app.NotificationManager
 import android.content.Context
 import android.os.Build
 import androidx.core.app.NotificationCompat
+import androidx.core.os.bundleOf
+import androidx.navigation.NavDeepLinkBuilder
 import com.sun.quickquotes.R
 import com.sun.quickquotes.data.model.Quote
+import com.sun.quickquotes.ui.main.MainActivity
 
 object NotificationHelper {
 
@@ -30,6 +33,7 @@ object NotificationHelper {
                     .bigText(quote.text)
             )
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .setContentIntent(createIntent(quote, context))
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val importance = NotificationManager.IMPORTANCE_DEFAULT
@@ -41,4 +45,14 @@ object NotificationHelper {
 
         notificationManager.notify(NOTIFICATION_ID, builder.build())
     }
+
+    private fun createIntent(quote: Quote, context: Context) =
+        NavDeepLinkBuilder(context)
+            .setComponentName(MainActivity::class.java)
+            .setGraph(R.navigation.nav_graph)
+            .setDestination(R.id.homeFragment)
+            .setArguments(
+                bundleOf(KEY_OPEN_HOME_FRAGMENT to quote)
+            )
+            .createPendingIntent()
 }
