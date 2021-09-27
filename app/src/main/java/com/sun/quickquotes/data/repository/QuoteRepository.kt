@@ -2,6 +2,7 @@ package com.sun.quickquotes.data.repository
 
 import com.sun.quickquotes.data.model.Quote
 import com.sun.quickquotes.data.model.QuoteResponse
+import com.sun.quickquotes.data.source.remote.utils.APIConfig
 
 interface QuoteRepository {
     suspend fun getAllLocalQuotes(): List<Quote>
@@ -14,17 +15,23 @@ interface QuoteRepository {
         text: String,
         author: String,
         tag: String
-    ): Long
+    ): Long?
 
     suspend fun isFavorite(id: Long): Boolean
 
-    suspend fun insertQuote(quote: Quote)
+    suspend fun insertQuote(quote: Quote): Long
 
     suspend fun updateQuote(quote: Quote)
 
     suspend fun deleteQuote(quote: Quote)
 
-    suspend fun getRandomQuotes(count: String): QuoteResponse
+    suspend fun getRandomQuotes(count: String = APIConfig.DEFAULT_ITEM_NUMBER): QuoteResponse
+
+    suspend fun getRandomQuotes(
+        count: String = APIConfig.DEFAULT_ITEM_NUMBER,
+        type: String,
+        value: String
+    ): QuoteResponse
 
     suspend fun getAllQuotes(): QuoteResponse
 

@@ -10,6 +10,12 @@ class QuoteRemoteDataSource(
     override suspend fun getRandomQuotes(count: String) =
         apiService.getRandomQuotes(count)
 
+    override suspend fun getRandomQuotes(
+        count: String,
+        type: String,
+        value: String
+    ) = apiService.getRandomQuotes(count, type, value)
+
     override suspend fun getAllQuotes() =
         apiService.getAllQuotes()
 

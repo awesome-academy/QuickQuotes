@@ -20,13 +20,13 @@ interface QuoteDAO {
         text: String,
         author: String,
         tag: String
-    ): Long
+    ): Long?
 
     @Query("SELECT COUNT(*) FROM ${Quote.TABLE_NAME} WHERE id =:id AND isFavorite = 1")
     suspend fun isFavorite(id: Long): Boolean
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertQuote(quote: Quote)
+    suspend fun insertQuote(quote: Quote): Long
 
     @Update
     suspend fun updateQuote(quote: Quote)

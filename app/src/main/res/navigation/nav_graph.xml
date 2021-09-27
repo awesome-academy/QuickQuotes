@@ -3,7 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/getStartedFragment">
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.sun.quickquotes.ui.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+
+        <argument
+            android:name="category"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+
+        <argument
+            android:name="quote"
+            android:defaultValue="@null"
+            app:argType="com.sun.quickquotes.data.model.Quote"
+            app:nullable="true" />
+    </fragment>
 
     <fragment
         android:id="@+id/getStartedFragment"

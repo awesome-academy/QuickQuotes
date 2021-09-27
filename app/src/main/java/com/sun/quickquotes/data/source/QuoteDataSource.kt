@@ -16,11 +16,11 @@ interface QuoteDataSource {
             text: String,
             author: String,
             tag: String
-        ): Long
+        ): Long?
 
         suspend fun isFavorite(id: Long): Boolean
 
-        suspend fun insertQuote(quote: Quote)
+        suspend fun insertQuote(quote: Quote): Long
 
         suspend fun updateQuote(quote: Quote)
 
@@ -30,6 +30,12 @@ interface QuoteDataSource {
 
     interface Remote {
         suspend fun getRandomQuotes(count: String): QuoteResponse
+
+        suspend fun getRandomQuotes(
+            count: String,
+            type: String,
+            value: String
+        ): QuoteResponse
 
         suspend fun getAllQuotes(): QuoteResponse
 
