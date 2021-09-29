@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="tag"
+            type="com.sun.quickquotes.data.model.Tag" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/dp_4">
+
+        <View
+            android:id="@+id/view_item_category_tag"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_radius14_gray_nurse"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="8:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_tag_name"
+            style="@style/TextViewDefault"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_10"
+            android:text="@{tag.name}"
+            android:textSize="@dimen/sp_20"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/view_item_category_tag"
+            app:layout_constraintStart_toStartOf="@id/view_item_category_tag"
+            app:layout_constraintTop_toTopOf="@id/view_item_category_tag"
+            tools:text="@tools:sample/first_names" />
+
+        <TextView
+            android:id="@+id/text_tag_count"
+            style="@style/TextViewDefault"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:text="@{tag.count}"
+            android:textSize="@dimen/sp_20"
+            app:layout_constraintBottom_toBottomOf="@id/view_item_category_tag"
+            app:layout_constraintEnd_toEndOf="@id/view_item_category_tag"
+            app:layout_constraintTop_toTopOf="@id/view_item_category_tag"
+            tools:text="10" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
